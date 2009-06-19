@@ -22,3 +22,9 @@ class WebScriptObject
     callWebScriptMethod("toString", withArguments:nil)
   end
 end
+
+class WebUndefined
+  def inspect
+    'undefined'
+  end
+end
