@@ -18,8 +18,8 @@ module Lyndon
         begin
           puts Result + @parser.eval(input).inspect
         rescue => e
-          puts "Error: #{e}", e.backtrace
-          quit
+          save_history
+          raise e
         else
           Readline::HISTORY.push(input)
         end
@@ -33,10 +33,14 @@ module Lyndon
       end
     end
 
-    def self.quit
+    def self.save_history
       File.open(HistoryFile, 'w') do |f|
         f.puts Readline::HISTORY.to_a.join("\n")
       end
+    end
+
+    def self.quit
+      save_history
       exit
     end
   end
