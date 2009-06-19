@@ -1,0 +1,20 @@
+#!/usr/bin/env macruby
+
+__DIR__ = File.expand_path(File.dirname(__FILE__))
+$LOAD_PATH.unshift File.join(__DIR__, '..', 'lib')
+
+require 'lyndon'
+require 'lyndon/repl'
+
+case ARGV.first
+when '-h', '--help'
+  puts "Run it:" ," $ lyndon -e '(string to eval)'", " $ lyndon -p '(string to eval; result will puts)'", " $ lyndon file.lyndon", " $ lyndon"
+when '-e'
+  Lyndon.eval(ARGV.last)
+when '-p'
+  puts Lyndon.eval(ARGV.last)
+when nil
+  Lyndon::Repl.start
+else
+  Lyndon.eval_file(ARGV.last)
+end
