@@ -16,7 +16,7 @@ module Lyndon
         quit if input.nil?
 
         begin
-          puts Result + @parser.eval(input).inspect
+          puts Result + @parser.eval(input).inspect.to_s
         rescue => e
           save_history
           raise e
