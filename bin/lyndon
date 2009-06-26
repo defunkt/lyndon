@@ -8,15 +8,13 @@ require 'lyndon/repl'
 
 case ARGV.first
 when '-h', '--help'
-  puts "Run it:" ," $ lyndon -e '(string to eval)'", " $ lyndon -p '(string to eval; result will puts)'", " $ lyndon file.lyndon", " $ lyndon"
+  puts "Run it:" ," $ lyndon -e '(string to eval)'", " $ lyndon -p '(string to eval; result will puts)'", " $ lyndon file.js", "$ lyndon file.html", "$ lyndon"
 when '-e'
   Lyndon.eval(ARGV.last)
 when '-p'
   puts Lyndon.eval(ARGV.last)
-when '-d'
-  Lyndon::Repl.start(ARGV.last)
 when nil
   Lyndon::Repl.start
 else
-  Lyndon.eval_file(ARGV.last)
+  ARGV[-1][/\.js$/] ? Lyndon.eval_file(ARGV.last) : Lyndon::Repl.start(ARGV.last)
 end
