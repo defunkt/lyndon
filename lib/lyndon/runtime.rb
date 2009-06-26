@@ -10,7 +10,7 @@ module Lyndon
       @scripter.setValue(Ruby.new, forKey:"Ruby")
 
       load_dom(dom) if dom
-      eval_file 'lib/js/lyndon'
+      eval_file File.dirname(__FILE__) + '/../js/lyndon'
     end
 
     def eval(js)
@@ -18,8 +18,7 @@ module Lyndon
     end
 
     def eval_file(file)
-      file = File.expand_path(file.to_s)
-      if File.exists? file
+      if File.exists? file = File.expand_path(file.to_s)
         eval File.read(file)
       elsif File.exists? file + '.js'
         eval File.read(file + '.js')
