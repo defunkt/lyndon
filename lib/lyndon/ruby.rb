@@ -24,5 +24,12 @@ module Lyndon
         end
       end
     end
+
+    ##
+    # Ruby('$LOAD_PATH') => array...
+    # Ruby('1 + 1') => 2
+    def invokeDefaultMethodWithArguments(args)
+      eval(args[0])
+    end
   end
 end
