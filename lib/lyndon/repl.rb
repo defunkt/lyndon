@@ -2,7 +2,7 @@ require 'readline'
 
 module Lyndon
   class Repl
-    Prompt = '>> '
+    Prompt = 'js> '
     AwaitingInput = '?> '
     Result = '=> '
     HistoryFile = File.join(File.expand_path('~'), '.lyndon_history')
