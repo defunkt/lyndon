@@ -11,6 +11,7 @@ framework 'WebKit'
 require 'lyndon/runtime'
 require 'lyndon/coercion'
 require 'lyndon/ruby'
+require 'lyndon/delegate'
 
 module Lyndon
   def self.eval(js)
