@@ -30,18 +30,18 @@ With Ruby
 
 If you want:
 
-        $ macirb
-        >> require 'lyndon'
-        => true
-        >> Lyndon.eval('1 + 1')
-        => 2
-        >> r = Lyndon::Runtime.new
-        => ##-<Lyndon::Runtime:...>
-        >> r.eval('var name = "chris"')
-        => undefined
-        >> r.eval('name')
-        => "chris"
-        
+    $ macirb
+    >> require 'lyndon'
+    => true
+    >> Lyndon.eval('1 + 1')
+    => 2
+    >> r = Lyndon::Runtime.new
+    => ##-<Lyndon::Runtime:...>
+    >> r.eval('var name = "chris"')
+    => undefined
+    >> r.eval('name')
+    => "chris"
+    
 That's basically it.
 
 Chris Wanstrath // chris@ozmm.org
