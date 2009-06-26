@@ -7,9 +7,9 @@ module Lyndon
     Result = '=> '
     HistoryFile = File.join(File.expand_path('~'), '.lyndon_history')
 
-    def self.start
+    def self.start(dom = nil)
       load_history
-      @parser = Lyndon::Runtime.new
+      @parser = Lyndon::Runtime.new(dom)
 
       loop do
         input = Readline.readline(Prompt)

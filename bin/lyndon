@@ -13,6 +13,8 @@ when '-e'
   Lyndon.eval(ARGV.last)
 when '-p'
   puts Lyndon.eval(ARGV.last)
+when '-d'
+  Lyndon::Repl.start(ARGV.last)
 when nil
   Lyndon::Repl.start
 else
