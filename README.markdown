@@ -25,6 +25,23 @@ Here It Goes
 
 Stuff like that.
 
+Oh, the DOM
+-----------
+
+    $ lyndon test.html 
+    js> Lyndon.require('jquery.min.js')
+    => true
+    js> jQuery('#hi').html()
+    => "Hello."
+    js> jQuery('#hi').html('Hi.')
+    => [object Object]
+    js> jQuery('#hi').html()
+    => "Hi."
+    => "[object HTMLBodyElement]"
+    js> document.body.innerHTML
+    => "\n    <h1 id=\"hi\">Hi.</h1>\n  \n\n"
+
+
 With Ruby
 ---------
 
