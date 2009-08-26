@@ -45,22 +45,20 @@ Oh, the DOM
 HTML with JavaScript
 --------------------
 
-    $ cat examples/index.html | lyndon 
+    $ cat examples/index.html | lyndon
     <html><head>
-    <title>Lyndon Test!</title>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    <script>
-      $(function() {
-        $('#content').append('<div id="hi">Hello world!</div>')
-      })
-    </script>
-    </head><body>
+    <title>It worked!</title>
+     </head><body>
     <div id="content">
     <div id="hi">Hello world!</div></div>
     </body></html>
-
+    
 Note that the `<div id="hi">Hello world!</div></div>` does _not_ exist
-in `examples/index.html` - it's added at runtime by JavaScript.
+in `examples/index.html` - it's added at runtime by
+JavaScript. JavaScript that strips itself out and changes the
+`<title`>. 
+
+Seriously.
 
 
 With Ruby
