@@ -6,9 +6,20 @@ $LOAD_PATH.unshift File.join(__DIR__, '..', 'lib')
 require 'lyndon'
 require 'lyndon/repl'
 
+if STDIN.stat.size > 0
+  input = STDIN.read
+  abort Lyndon.parse(input)
+end
+
 case ARGV.first
 when '-h', '--help'
-  puts "Run it:" ," $ lyndon -e '(string to eval)'", " $ lyndon -p '(string to eval; result will puts)'", " $ lyndon file.js", " $ lyndon file.html", " $ lyndon"
+  puts "Run it:"
+  puts " $ lyndon -e '(string to eval)'"
+  puts " $ lyndon -p '(string to eval; result will puts)'"
+  puts " $ lyndon file.js"
+  puts " $ lyndon file.html"
+  puts " $ cat file.html | lyndon"
+  puts " $ lyndon"
 when '-e'
   Lyndon.eval(ARGV.last)
 when '-p'

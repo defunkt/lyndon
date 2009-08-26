@@ -22,4 +22,8 @@ module Lyndon
     contents = File.read(File.expand_path(file))
     eval(contents)
   end
+
+  def self.parse(html)
+    Lyndon::Runtime.new(html).to_s
+  end
 end

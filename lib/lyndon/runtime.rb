@@ -26,9 +26,17 @@ module Lyndon
     end
 
     def load_dom(dom, base_url = nil)
-      dom = File.exists?(dom) ? File.read(dom) : dom
-      @webView.mainFrame.loadHTMLString(dom, baseURL:base_url)
+      @dom = File.exists?(dom) ? File.read(dom) : dom
+      @webView.mainFrame.loadHTMLString(@dom, baseURL:base_url)
       NSApplication.sharedApplication.run
+    end
+
+    def to_s
+      @dom ? html_source : super
+    end
+
+    def html_source
+      '<html>'+eval("document.documentElement.innerHTML")+'</html>'
     end
   end
 end
