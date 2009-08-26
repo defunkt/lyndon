@@ -8,7 +8,7 @@ require 'lyndon/repl'
 
 case ARGV.first
 when '-h', '--help'
-  puts "Run it:" ," $ lyndon -e '(string to eval)'", " $ lyndon -p '(string to eval; result will puts)'", " $ lyndon file.js", "$ lyndon file.html", "$ lyndon"
+  puts "Run it:" ," $ lyndon -e '(string to eval)'", " $ lyndon -p '(string to eval; result will puts)'", " $ lyndon file.js", " $ lyndon file.html", " $ lyndon"
 when '-e'
   Lyndon.eval(ARGV.last)
 when '-p'
