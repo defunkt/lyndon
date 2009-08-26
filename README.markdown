@@ -42,6 +42,27 @@ Oh, the DOM
     => "\n    <h1 id=\"hi\">Hi.</h1>\n  \n\n"
 
 
+HTML with JavaScript
+--------------------
+
+    $ cat examples/index.html | lyndon 
+    <html><head>
+    <title>Lyndon Test!</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script>
+      $(function() {
+        $('#content').append('<div id="hi">Hello world!</div>')
+      })
+    </script>
+    </head><body>
+    <div id="content">
+    <div id="hi">Hello world!</div></div>
+    </body></html>
+
+Note that the `<div id="hi">Hello world!</div></div>` does _not_ exist
+in `examples/index.html` - it's added at runtime by JavaScript.
+
+
 With Ruby
 ---------
 
