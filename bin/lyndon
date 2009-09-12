@@ -8,7 +8,8 @@ require 'lyndon/repl'
 
 if STDIN.stat.size > 0
   input = STDIN.read
-  abort Lyndon.parse(input)
+  puts Lyndon.parse(input)
+  exit
 end
 
 case ARGV.first
